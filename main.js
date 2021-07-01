@@ -17,7 +17,7 @@ function takeSnapShot() {
 
 console.log("ml5 version-",ml5.version);
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/wqLFFjkVK/',modelLoaded);
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/wqLFFjkVK/model.json',modelLoaded);
 
 function modelLoaded() {
     console.log("modelLoaded");
@@ -33,7 +33,7 @@ function gotResult(error,result) {
         console.error(error)
     }else {
         console.log(result)
-        //document.getElementById("result_objectname").innerHTML = result[0].label;
-        //document.getElementById("result_objectaccuracy").innerHTML = result[0].confidence.toFixed(3);
+        document.getElementById("result_objectname").innerHTML = result[0].label;
+        document.getElementById("result_objectaccuracy").innerHTML = result[0].confidence.toFixed(3);
     }
 }
